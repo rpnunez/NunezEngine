@@ -8,7 +8,7 @@
  * @version v0.1
  */
 
-spl_autoload_register(function() {
+spl_autoload_register(function($className) {
     $className = ltrim($className, '\\');
     $fileName  = '';
     $namespace = '';
@@ -21,4 +21,4 @@ spl_autoload_register(function() {
 
     echo 'Attempting to require_once: '. $className .' ('. $fileName .').<br />';
     require_once $fileName;
-})
+});
