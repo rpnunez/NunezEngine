@@ -7,7 +7,6 @@
  * @author Raymond Nunez <rpnunez@gmail.com>
  * @version v0.1
  */
-namespace NunezEngine;
 
 /**
  * Class Router

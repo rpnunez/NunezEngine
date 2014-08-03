@@ -7,8 +7,6 @@
  * @version v0.1
  */
 
-namespace NunezEngine;
-
 class AppModel extends EngineModel {
 
 } 

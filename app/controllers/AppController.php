@@ -7,9 +7,6 @@
  * @version v0.1
  */
 
-namespace NunezEngine;
-
-
 class AppController extends EngineController {
 
 } 

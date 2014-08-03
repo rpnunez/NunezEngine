@@ -41,10 +41,12 @@ class NunezEngine {
         $files = array('Config', /*'Dispatcher',*/ 'Router', 'Input'/*, 'DB'*/);
 
         foreach ($files as $file) {
-            if (!file_exists($file .'.php')) {
-                throw new \Exception('Fatal error: Required file '. $file .'.php missing.');
+            $filePath = SYSTEM_PATH . DS . $file .'.php';
+
+            if (!file_exists($filePath)) {
+                throw new \Exception('Fatal error: Required file '. $filePath .' missing.');
             } else {
-                require_once($file .'.php');
+                require_once($filePath);
                 $this->$file = new $file();
             }
         }
