@@ -19,7 +19,7 @@ class NunezEngine {
     /**
      * Accessible objects
      */
-    public $Dispatcher = null;
+    //public $Dispatcher = null;
     public $Router = null;
     public $Input = null;
     public $DB = null;
@@ -29,9 +29,16 @@ class NunezEngine {
      */
     private $config = null;
 
+    /**
+     * Current request variables
+     */
+    private $controller = null;
+    private $model = null;
+    private $view = null;
+
     public function __construct() {
         // Include config
-        $files = array('Config', 'Dispatcher', 'Router', 'Input', 'DB');
+        $files = array('Config', /*'Dispatcher',*/ 'Router', 'Input'/*, 'DB'*/);
 
         foreach ($files as $file) {
             if (!file_exists($file .'.php')) {
