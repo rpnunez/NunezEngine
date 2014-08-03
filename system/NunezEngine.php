@@ -47,7 +47,7 @@ class NunezEngine {
                 throw new \Exception('Fatal error: Required file '. $filePath .' missing.');
             } else {
                 require_once($filePath);
-                $this->$file = new $file();
+                $this->$file = new $file($this);
             }
         }
     }
