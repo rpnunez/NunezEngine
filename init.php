@@ -8,6 +8,11 @@
  * @version v0.1
  */
 
+define('DS', DIRECTORY_SEPARATOR);
+define('BASE_PATH', dirName(__FILE__));
+define('APP_PATH', BASE_PATH . DS . 'app');
+define('SYSTEM_PATH', BASE_PATH . DS . 'system');
+
 spl_autoload_register(function($className) {
     $className = ltrim($className, '\\');
     $fileName  = '';
@@ -22,3 +27,5 @@ spl_autoload_register(function($className) {
     echo 'Attempting to require_once: '. $className .' ('. $fileName .').<br />';
     require_once $fileName;
 });
+
+require_once SYSTEM_PATH . DS . 'init.php'

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * NunezEngine
  * Micro-framework for rapid web application development.
@@ -7,6 +8,8 @@
  * @version v0.1
  */
 
-class PagesController /*extends AppController*/ {
-
-} 
+$config = array(
+    'debug' => true,
+    'debuglevel' => 10,
+    'homeController' => 'Pages'
+);

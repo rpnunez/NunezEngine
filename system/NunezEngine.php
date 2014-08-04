@@ -50,5 +50,9 @@ class NunezEngine {
                 $this->$file = new $file($this);
             }
         }
+
+        // Dispatch request
+        $q = (isSet($_GET['q']) ? $_GET['q'] : '');
+        $this->Router->dispatch($q);
     }
 } 
