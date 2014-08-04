@@ -33,9 +33,9 @@ $Config = new stdClass();
 $files = array('engine', 'db');
 
 foreach ($files as $file) {
-    $filePath = APP_PATH . DS . 'config' .'.php';
+    $filePath = APP_PATH . DS . 'config' . DS . $file .'.php';
     if (!file_exists($filePath)) {
-        throw new Exception('Require config file missing: '. $file .'.php');
+        throw new Exception('Require config file missing: '. $file .'.php, file path: '. $filePath);
     } else {
         $Config->$file = require_once $filePath;
     }

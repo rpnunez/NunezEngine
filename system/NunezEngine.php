@@ -36,9 +36,10 @@ class NunezEngine {
     private $model = null;
     private $view = null;
 
-    public function __construct() {
+    public function __construct(stdClass $Config) {
         // Include config
-        $files = array('Config', /*'Dispatcher',*/ 'Router', 'Input'/*, 'DB'*/);
+        $this->Config = $Config;
+        $files = array(/*'Dispatcher',*/ 'Router', 'Input'/*, 'DB'*/);
 
         foreach ($files as $file) {
             $filePath = SYSTEM_PATH . DS . $file .'.php';

@@ -24,8 +24,10 @@ try {
         throw new \Exception('Fatal Error: SYSTEM_PATH/NunezEngine.php is missing.');
     } else {
         require_once $nePath;
-        $NunezEngine = new NunezEngine();
+        $NunezEngine = new NunezEngine($Config);
     }
 } catch (\Exception $e) {
     echo 'Caught exception: '. $e->getMessage() .' on file '. $e->getFile() .', line '. $e->getLine() .'.';
 }
+
+echo '<pre>'. print_r($NunezEngine, true) .'</pre>';
