@@ -9,7 +9,8 @@
  */
 
 return array(
-    'debug' => true,
-    'debuglevel' => 10,
-    'homeController' => 'Pages'
+    'server' => 'localhost',
+    'user'   => 'root',
+    'pass'   => 'root',
+    'name'   => 'nunezengine-app1'
 );

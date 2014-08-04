@@ -27,3 +27,16 @@ spl_autoload_register(function($className) {
     echo 'Attempting to require_once: '. $className .' ('. $fileName .').<br />';
     require_once $fileName;
 });
+
+// Include configuration files
+$Config = new stdClass();
+$files = array('engine', 'db');
+
+foreach ($files as $file) {
+    $filePath = APP_PATH . DS . 'config' .'.php';
+    if (!file_exists($filePath)) {
+        throw new Exception('Require config file missing: '. $file .'.php');
+    } else {
+        $Config->$file = require_once $filePath;
+    }
+}

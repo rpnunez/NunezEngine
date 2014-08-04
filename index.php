@@ -14,7 +14,7 @@ try {
     if (!file_exists($initPath)) {
         throw new \Exception('Fatal Error:/init.php is missing.');
     } else {
-        require_once SYSTEM_PATH . DS . 'init.php';
+        require_once './init.php';
     }
 
     // Include NunezEngine
