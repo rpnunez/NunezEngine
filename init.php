@@ -27,5 +27,3 @@ spl_autoload_register(function($className) {
     echo 'Attempting to require_once: '. $className .' ('. $fileName .').<br />';
     require_once $fileName;
 });
-
-require_once SYSTEM_PATH . DS . 'init.php'
