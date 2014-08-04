@@ -29,7 +29,7 @@ try {
         $NunezEngine = new NunezEngine($Config);
     }
 } catch (\Exception $e) {
-    echo 'Caught exception: '. $e->getMessage() .' on file '. $e->getFile() .', line '. $e->getLine() .'.';
+    echo '<p style="border: 1px solid #333; padding: 5px;">Caught exception: '. $e->getMessage() .' on file '. $e->getFile() .', line '. $e->getLine() .'.</p>';
 }
 
 echo '<pre>'. print_r($NunezEngine, true) .'</pre>';
