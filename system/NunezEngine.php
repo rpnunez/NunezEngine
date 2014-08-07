@@ -8,13 +8,13 @@
  */
 
 /**
- * Class NunezEngine
+ * Class Engine
  *
  * Core NunezEngine dispatching, routing and everything happens in this class.
  * @package NunezEngine
  * @since v.0.1
  */
-class NunezEngine {
+class Engine {
 
     /**
      * Accessible objects
@@ -27,7 +27,7 @@ class NunezEngine {
     /**
      * Private variables
      */
-    private $config = null;
+    private $Config = null;
 
     /**
      * Current request variables
@@ -37,6 +37,7 @@ class NunezEngine {
     private $view = null;
 
     public function __construct(stdClass $Config) {
+        // @TODO: THis should be handled by an autoloader, seriously.
         // Include config
         $this->Config = $Config;
         $files = array(/*'Dispatcher',*/ 'Router', 'Input'/*, 'DB'*/);
