@@ -26,7 +26,7 @@ try {
         throw new \Exception('Fatal Error: SYSTEM_PATH/NunezEngine.php is missing.');
     } else {
         require_once $nePath;
-        $NunezEngine = new NunezEngine($Config);
+        $Engine = new Engine($Config);
     }
 } catch (\Exception $e) {
     echo '<p style="border: 1px solid #333; padding: 5px;">Caught exception: '. $e->getMessage() .' on file '. $e->getFile() .', line '. $e->getLine() .'.</p>';
