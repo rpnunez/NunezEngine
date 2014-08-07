@@ -10,6 +10,8 @@
 
 // @TODO: I think the core class should be Engine and not NunezEngine.
 
+error_reporting(E_ALL);
+
 try {
     // Bootstrap
     $initPath = './init.php';
