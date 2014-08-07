@@ -37,7 +37,7 @@ class Engine {
     private $view = null;
 
     public function __construct(stdClass $Config) {
-        // @TODO: THis should be handled by an autoloader, seriously.
+        // @TODO: This should be handled by an autoloader, seriously.
         // Include config
         $this->Config = $Config;
         $files = array(/*'Dispatcher',*/ 'Router', 'Input'/*, 'DB'*/);
