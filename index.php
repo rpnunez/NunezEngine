@@ -29,6 +29,8 @@ try {
         require_once $nePath;
         $Engine = new Engine($Config);
 
+        echo 'Inited Engine() with $Config';
+
         echo '<pre>'. print_r($Engine, true) .'</pre>';
     }
 } catch (\Exception $e) {

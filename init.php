@@ -12,6 +12,7 @@ define('DS', DIRECTORY_SEPARATOR);
 define('BASE_PATH', dirName(__FILE__));
 define('APP_PATH', BASE_PATH . DS . 'app');
 define('SYSTEM_PATH', BASE_PATH . DS . 'system');
+define('ENV', '0'); // Environment - 0 = Dev, 1 = Production
 
 spl_autoload_register(function($className) {
     $className = ltrim($className, '\\');
@@ -40,3 +41,5 @@ foreach ($files as $file) {
         $Config->$file = require_once $filePath;
     }
 }
+
+// Include commonly used functions

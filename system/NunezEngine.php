@@ -37,6 +37,7 @@ class Engine {
     private $view = null;
 
     public function __construct(stdClass $Config) {
+        echo '<p>Engine constructor called</p>';
         // @TODO: This should be handled by an autoloader, seriously.
         // Include config
         $this->Config = $Config;
@@ -50,6 +51,8 @@ class Engine {
             } else {
                 require_once($filePath);
                 $this->$file = new $file($this);
+                
+
             }
         }
 
