@@ -43,3 +43,4 @@ foreach ($files as $file) {
 }
 
 // Include commonly used functions
+include_once(SYSTEM_PATH . DS . '/common.php');

@@ -14,9 +14,9 @@
  */
 class Input {
 
-    private $NunezEngine = null;
+    private $Engine = null;
 
-    public function __construct(NunezEngine $NunezEngine) {
-        $this->NunezEngine = $NunezEngine;
+    public function __construct(Engine $Engine) {
+        $this->Engine = $Engine;
     }
 } 

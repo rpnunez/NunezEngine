@@ -14,17 +14,17 @@
  */
 class Router {
 
-    private $NunezEngine;
+    private $Engine;
 
-    public function __construct(NunezEngine $NunezEngine) {
-        $this->NunezEngine = $NunezEngine;
+    public function __construct(Engine $Engine) {
+        $this->Engine = $Engine;
     }
 
     public function dispatch($query) {
         if (empty($query)) {
             // Dispatch home controller
-            $controllerFile = APP_PATH . DS . 'controllers' . DS . $this->NunezEngine->Config->engine['homeController'] .'Controller.php';
-            $controllerName = $this->NunezEngine->Config->engine['homeController'] .'Controller';
+            $controllerFile = APP_PATH . DS . 'controllers' . DS . $this->Engine->Config->engine['homeController'] .'Controller.php';
+            $controllerName = $this->Engine->Config->engine['homeController'] .'Controller';
         } else {
             // Split the query by /
             $parts = explode('/', $query);
@@ -42,9 +42,9 @@ class Router {
         } else {
             // Include controller
             require_once($controllerFile);
-            $this->NunezEngine->$controllerName = new $controllerName();
+            $this->Engine->$controllerName = new $controllerName();
 
-            echo '<p>Controller '. $controllerName .' loaded!';
+            debugInline('Controller '. $controllerName .' loaded!');
         }
     }
 } 
