@@ -29,9 +29,7 @@ try {
         require_once $nePath;
         $Engine = new Engine($Config);
 
-        echo 'Inited Engine() with $Config';
-
-        echo '<pre>'. print_r($Engine, true) .'</pre>';
+        debugInline($Engine);
     }
 } catch (\Exception $e) {
     echo '<p style="border: 1px solid #333; padding: 5px;">Caught exception: '. $e->getMessage() .' on file '. $e->getFile() .', line '. $e->getLine() .'.</p>';
