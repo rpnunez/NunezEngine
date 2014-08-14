@@ -21,7 +21,7 @@ class Router {
     }
 
     public function dispatch($query) {
-        debugInline('Router->dispatch() called.');
+        $this->Engine->Logger->log('Router->dispatch() called.');
 
         if (empty($query)) {
             // Dispatch home controller
@@ -57,6 +57,7 @@ class Router {
                 $this->Engine->Logger->log('Action '. $action .' executed.');
 
                 // @TODO: Display the view file in views/$controllerName/$action.php
+                $controllerName = str_replace('Controller', '', $controllerName);
                 $viewPath = APP_PATH . DS . 'views' . DS . $controllerName . DS . $action .'.php';
 
                 if (file_exists($viewPath)) {
@@ -65,7 +66,7 @@ class Router {
                     $output = ob_get_contents();
                     ob_end_flush();
 
-                    echo $output;
+                    //echo $output;
                 } else {
                     throw new Exception('Requested view file does not exist: '. $viewPath .'.');
                 }
