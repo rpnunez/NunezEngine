@@ -40,7 +40,7 @@ class Engine {
         // @TODO: This should be handled by an autoloader, seriously.
         // Include config
         $this->Config = $Config;
-        $files = array(/*'Dispatcher',*/ 'Router', 'Input'/*, 'DB'*/);
+        $files = array(/*'Dispatcher',*/ 'Router', 'Input', 'Logger'/*, 'DB'*/);
 
         foreach ($files as $file) {
             $filePath = SYSTEM_PATH . DS . $file .'.php';
@@ -52,9 +52,5 @@ class Engine {
                 $this->$file = new $file($this);
             }
         }
-
-        // Dispatch request
-        $q = (isSet($_GET['q']) ? $_GET['q'] : '');
-        $this->Router->dispatch($q);
     }
 } 

@@ -32,7 +32,7 @@ class Router {
             // Split the query by /
             $parts = explode('/', $query);
 
-            debugInline($parts);
+            $this->Engine->Logger->log($parts);
 
             // [0] = Controller, [1] = Action, [3] = GET/Additional parameters
 
@@ -50,11 +50,11 @@ class Router {
             require_once($controllerFile);
             $controller = $this->Engine->$controllerName = new $controllerName();
 
-            debugInline('Controller '. $controllerName .' initialized.');
+            $this->Engine->Logger->log('Controller '. $controllerName .' initialized.');
 
             if (method_exists($controller, $action)) {
                 $controller->$action(/* Need to pass $parts[3] here */);
-                debugInline('Action '. $action .' executed.');
+                $this->Engine->Logger->log('Action '. $action .' executed.');
 
                 // @TODO: Display the view file in views/$controllerName/$action.php
                 $viewPath = APP_PATH . DS . 'views' . DS . $controllerName . DS . $action .'.php';

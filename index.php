@@ -29,7 +29,12 @@ try {
         require_once $nePath;
         $Engine = new Engine($Config);
 
-        debugInline($Engine);
+        // Dispatch request
+        $q = (isSet($_GET['q']) ? $_GET['q'] : '');
+        $Engine->Router->dispatch($q);
+
+        $Engine->Logger->log($Engine);
+        $Engine->Logger->display();
     }
 } catch (\Exception $e) {
     echo '<p style="border: 1px solid #333; padding: 5px;">Caught exception: '. $e->getMessage() .' on file '. $e->getFile() .', line '. $e->getLine() .'.</p>';

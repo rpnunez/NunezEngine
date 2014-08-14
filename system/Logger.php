@@ -30,10 +30,10 @@ class Logger {
      */
     private $errors = array();
 
-    private $NunezEngine = null;
+    private $Engine = null;
 
-    public function __construct(NunezEngine $NunezEngine) {
-        $this->NunezEngine = $NunezEngine;
+    public function __construct(Engine $Engine) {
+        $this->Engine = $Engine;
     }
 
     public function log($data) {
@@ -81,11 +81,14 @@ class Logger {
                     var_dump($log);
                     echo '</pre>';
                 } else {
-
+                    echo '<pre>';
+                    var_dump($log);
+                    echo '</pre>';
                 }
 
                 echo '</li>';
             }
+            echo '</ol>';
         }
 
         echo '</div>';
